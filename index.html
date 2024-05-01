@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 30%;
+            height: 460px;
+            margin: auto;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: aquamarine;
+        }
+
+        .container img {
+            width: 100%;
+            /* margin: auto; */
+            height: 30vh;
+        }
+
+        .container p {
+            margin: 20px auto;
+            width: 95%;
+            height: 9rem;
+            /* padding: 10px; */
+            /* border: 2px solid blueviolet; */
+        }
+
+        .container .btns {
+            display: flex;
+            justify-content: space-between;
+            /* border: 2px solid black; */
+            align-items: center;
+            width: 15vw;
+            margin: 20px auto;
+        }
+
+        .container .btns button {
+            padding: 4px 12px;
+            background-color: yellowgreen;
+            color: black;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        #second,
+        #third,
+        #fourth,
+        #fifth {
+            display: none;
+            /* display: ; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="container" id="first">
+
+            <img src="clanguage.png" alt="404 not found">
+    
+            <p>C is a general-purpose programming language created by Dennis Ritchie at the Bell Laboratories in 1972.
+    
+                It is a very popular language, despite being old. The main reason for its popularity is because it is a
+                fundamental language in the field of computer science.
+    
+                C is strongly associated with UNIX, as it was developed to write the UNIX operating system.</p>
+            <div class="btns">
+                <button onclick="prevFunc()">prev</button>
+                <button onclick="nextFunc()">next</button>
+            </div>
+    
+        </div>
+        <div class="container" id="second">
+            <!-- <div class="img"> -->
+            <img src="cpp.png" alt="404 not found">
+            <!-- </div> -->
+            <p>C++ is a cross-platform language that can be used to create high-performance applications.
+    
+                C++ was developed by Bjarne Stroustrup, as an extension to the C language.
+    
+                C++ gives programmers a high level of control over system resources and memory.
+    
+                The language was updated 4 major times in 2011, 2014, 2017, and 2020 to C++11, C++14, C++17, C++20.</p>
+            <div class="btns">
+                <button onclick="prevFunc()">prev</button>
+                <button onclick="nextFunc()">next</button>
+            </div>
+    
+        </div>
+        <div class="container" id="third">
+            <!-- <div class="img"> -->
+            <img src="js.jpg" alt="404 not found">
+            <!-- </div> -->
+            <p>JavaScript (JS) is the most popular lightweight, interpreted compiled programming language. It can be used
+                for both Client-side as well as Server-side developments. It is also known as a scripting language for web
+                pages.</p>
+            <div class="btns">
+                <button onclick="prevFunc()">prev</button>
+                <button onclick="nextFunc()">next</button>
+            </div>
+    
+        </div>
+        <div class="container" id="fourth">
+            <!-- <div class="img"> -->
+            <img src="java.png" alt="404 not found">
+            <!-- </div> -->
+            <p>Developed by Sun Microsystems in 1995, Java is a highly popular, object-oriented programming language. This
+                platform independent programming language is utilized for Android development, web development, artificial
+                intelligence, cloud applications, and much more.</p>
+            <div class="btns">
+                <button onclick="prevFunc()">prev</button>
+                <button onclick="nextFunc()">next</button>
+            </div>
+    
+        </div>
+        <div class="container" id="fifth">
+            <!-- <div class="img"> -->
+            <img src="python.jpg" alt="404 not found">
+            <!-- </div> -->
+            <p>Python is a high-level, general-purpose, and very popular programming language. Python programming language
+                (latest Python 3) is being used in web development, Machine Learning applications, along with all
+                cutting-edge technology in Software Industry.
+    
+                Python language is being used by almost all tech-giant companies like – Google, Amazon, Facebook, Instagram,
+                Dropbox, Uber… etc.</p>
+            <div class="btns">
+                <button onclick="prevFunc()">prev</button>
+                <button onclick="nextFunc()">next</button>
+            </div>
+    
+        </div>
+    </div>
+    
+    <script>
+        let count = 0;
+        let review = document.getElementsByClassName('container');
+        console.log(review[count]);
+
+        // console.log(count);
+        function prevFunc() {
+            count--;
+            console.log(count);
+            for(let i=0; i<review.length; i++){
+                review[i].style.display = 'none';
+            }
+            if(count == -1){
+                count=4;
+            }
+            review[count].style.display = 'block';
+
+        }
+        function nextFunc() {
+            count++;
+            console.log(count);
+            for(let i=0; i<review.length; i++){
+                review[i].style.display = 'none';
+            }
+            if(count == 5){
+                count=0;
+            }
+            review[count].style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
